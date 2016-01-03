@@ -56,6 +56,18 @@ app.get('/auth/logout', function(req, res){
     res.redirect('/app/pages/auth/auth.html');
 });
 
+server.get('/profile', function(req,res){
+    var userID = req.signedCookies.usersession;
+    var users = router.db.object.profiles;
+    for(var i=0;i<=users.length -1;i++){
+        if(users[i].userId == userID){
+            res.send(JSON.stringify(users[i]));
+            return;
+        }
+    }
+    res.send();
+});
+
 app.use(express.static(path.join(__dirname, '../')));
 var http = require('http').Server(app);
 http.listen(8000);
