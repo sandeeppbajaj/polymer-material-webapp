@@ -19,4 +19,4 @@ Step 5: Run command node install
 
 Step 6: Run command node app.js
 
-Step 7: Navigate in browser to http://localhost:8000
+Step 7: Navigate in browser to http://localhost:8080
